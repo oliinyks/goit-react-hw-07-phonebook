@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   useFetchContactsQuery,
   useCreateContactMutation,
-} from 'redux/Contact/ContactSlice';
+} from 'redux/ContactSlice';
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
 import css from './form.module.css';

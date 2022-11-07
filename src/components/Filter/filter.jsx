@@ -1,18 +1,18 @@
 import React from 'react';
 import { getStatusFilter } from 'redux/selectors';
-import { useSelector } from 'react-redux';
-import {useFetchContactsQuery} from 'redux/Contact/ContactSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from 'redux/FilterSlice';
 import { nanoid } from 'nanoid';
 import css from './filter.module.css';
 
 export default function Filter() {
   const filter = useSelector(getStatusFilter);
-const {data: getContact} = useFetchContactsQuery();
   const nameFilterId = nanoid();
+  const dispatch = useDispatch();
 
   const changeFilter = e => {
     const event = e.currentTarget.value;
-	getContact(event);
+    dispatch(setFilter(event));
   };
 
   return (
